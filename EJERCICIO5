@@ -1,0 +1,47 @@
+#include <stdio.h> 
+
+ 
+
+int main() { 
+
+	setbuf(stdout, NULL); 
+
+ 
+
+	//declaración de variables. num  
+
+	int num, x, factorial ; 
+
+	//Inicio de tabla en consola 
+
+	printf("n\t n!\n"); 
+
+	printf("------------\n"); 
+
+ 
+
+	//Ciclo for para calcular el factorial del 1 al 5 
+
+	for (num = 1; num <= 5; num++) { 
+
+		factorial = 1 ; //Factorial regresa a valor 1 para cada ciclo. 
+
+ 
+
+		for (x = 1; x <= num; x++) { 
+
+			factorial = factorial * x ; 
+
+		} 
+
+ 
+
+		printf("%d\t %d\n", num, factorial); 
+
+	} 
+
+ 
+
+	return 0; 
+
+} 
