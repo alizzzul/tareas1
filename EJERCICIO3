@@ -1,0 +1,67 @@
+#include <stdio.h> 
+
+ 
+
+int main() { 
+
+	setbuf(stdout, NULL); 
+
+ 
+
+	int var, num, menor, x ; 
+
+ 
+
+	printf("¿Cuantos números deseas ingresar? "); 
+
+	scanf("%d", &var) ; 
+
+ 
+
+	if (var <= 0) { 
+
+		printf("Ingresa un número positivo, por favor.\n"); 
+
+		return 1; //Regresa a ingresar un número válido 
+
+	} 
+
+ 
+
+	printf("Ingresa un número: "); 
+
+	scanf("%d", &num); 
+
+ 
+
+	menor = num ; //Asume que el primer número es el menor para después compararlos 
+
+ 
+
+	for (x = 2; x <= var; x++) { //Recibe los demás números 
+
+		printf("Ingresa un número %d: ", x); 
+
+		scanf("%d", &num); 
+
+ 
+
+		if (num < menor) { 
+
+			menor = num ; //Se hace la comparación y determina el número menor 
+
+		} 
+
+	} 
+
+ 
+
+	printf("\n El menor de los %d números es: %d\n", var, menor); 
+
+	//Muestra el reultado 
+
+	return 0 ; 
+
+ 
+
+} 
