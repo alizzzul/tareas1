@@ -1,0 +1,37 @@
+#include <stdio.h> 
+
+ 
+
+int main() { 
+
+	setbuf(stdout, NULL); 
+
+	 
+
+	int num, producto = 1 ; 
+
+ 
+
+	for (num = 1; num <= 15; num++) { // Se repite el ciclo hasta que llega a 15 
+
+		if (num % 2 != 0) { //Se verifica que sea número inpar. 
+
+			producto = producto * num ; 
+
+			 
+
+	} 
+
+ 
+
+} 
+
+	printf("El producto de los números impares del 1 al 15 es: %d\n", producto); //Se imprime el resultado 
+
+ 
+
+	return 0 ; 
+
+ 
+
+} 
