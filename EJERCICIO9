@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	setbuf(stdout, NULL);
+
+	int lado1, lado2, hipotenusa ;
+	
+	printf("Ternas menores o iguales a 500\n");
+
+	for (lado1 = 1; lado1 <= 500; lado1++) {
+		for (lado2 = 1; lado2 <= 500; lado2++) {
+			for(hipotenusa = 1; hipotenusa <= 500 ; hipotenusa++) {
+				if (lado1 * lado1 + lado2 * lado2 == hipotenusa * hipotenusa) {
+					printf("(%d, %d, %d)\n", lado1, lado2, hipotenusa);
+				}
+			}
+		}
+	}
+	return 0 ;
+}
