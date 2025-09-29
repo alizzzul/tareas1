@@ -1,0 +1,55 @@
+#include <stdio.h> 
+
+ 
+
+int main() { 
+
+	setbuf(stdout, NULL); 
+
+	//Declaración de variables 
+
+	int x, ast ; 
+
+	int num ; 
+
+	//Ciclo para leer 5 números 
+
+	for (x = 1; x <= 5; x++) { 
+
+		//Recibe el número. 
+
+		printf("Ingresa un número entre 1 y 30: "); 
+
+		scanf("%d", &num); 
+
+		//aVerificación de que sea entre 1 y 30. 
+
+		while (num < 1 || num > 30) { 
+
+			printf("Error. Debe ser un número entre 1 y 30."); 
+
+			scanf("%d", &num); 
+
+		} 
+
+		//Impresion de la linea de asteriscos 
+
+		for (ast = 1; ast <= num; ast++) { 
+
+			printf("*"); 
+
+		} 
+
+		printf("\n"); 
+
+	} 
+
+ 
+
+	return 0; 
+
+ 
+
+} 
+
+ 
