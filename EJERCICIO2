@@ -1,0 +1,73 @@
+#include <stdio.h> 
+
+ 
+
+int main() { 
+
+	setbuf(stdout, NULL); 
+
+ 
+
+	int num, suma = 0, contador = 0 ; 
+
+	float promedio ; 
+
+ 
+
+	printf("Ingresa números enteros,\n"); 
+
+	printf("Escribe 9999 para terminar programa.\n\n"); 
+
+ 
+
+	while (1) { //ciclo while para repetir la instrucción hasta que se de salida 
+
+		printf("Ingresa un número: "); 
+
+		scanf("%d", &num); 
+
+ 
+
+		if (num == 9999) { //Salida del programa 
+
+			break ; 
+
+		} 
+
+ 
+
+		if (num < 0) { 
+
+			printf("Ingresa números enteros postivios.\n "); 
+
+			continue ; //regresa a pedir el número 
+
+		} 
+
+ 
+
+		suma += num ; 
+
+		contador++; 
+
+	} 
+
+ 
+
+	if (contador > 0) { 
+
+		promedio = (float) suma / contador ; 
+
+		printf("\nEl promedio de los %d numeros es de: %.2f\n", contador, promedio); 
+
+	} else { 
+
+		printf("\nValores invalidos,\n"); 
+
+	} 
+
+ 
+
+	return 0 ; 
+
+} 
