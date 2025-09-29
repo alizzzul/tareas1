@@ -1,0 +1,67 @@
+#include <stdio.h> 
+
+ 
+
+int main() { 
+
+	setbuf(stdout, NULL); 
+
+	//Declaración de variables 
+
+	int cuenta, cliente ; 
+
+	float nuevoLimite, anteriorLimite, saldo ; 
+
+ 
+
+	for (cliente = 1; cliente <= 3; cliente++) { //ciclo para analizar datos de 3 clientes 
+
+		printf("\n--- Cliente %d ---\n", cliente); 
+
+		//Recibe los datos del cliente 
+
+		printf("Ingresa tu número de cuenta: "); 
+
+		scanf("%d", &cuenta); 
+
+ 
+
+		printf("Ingresa el limite de crédito anterior: "); 
+
+		scanf("%f", &anteriorLimite); 
+
+ 
+
+		printf("Ingresa el saldo actual: "); 
+
+		scanf("%f", &saldo); 
+
+		//Dividimos límite anterior para calcular el nuevo 
+
+		nuevoLimite = anteriorLimite / 2.0; 
+
+		//Imprimimos resultados. 
+
+		printf("Número de cuenta: %d\n", cuenta); 
+
+		printf("Nuevo limite de crédito: %.2f\n", nuevoLimite); 
+
+ 
+
+		if (saldo > nuevoLimite) { //Revisa que el saldo disponible no sea mayor al nuevo límite de crédito. 
+
+			printf("Tu saldo está fuera de tu límite de tu crédito. ☹\n"); 
+
+		} else { 
+
+			printf("Tu saldo está dentro de tu límite de credito. ☺\n"); 
+
+		} 
+
+ 
+
+	} 
+
+	return 0 ; 
+
+} 
