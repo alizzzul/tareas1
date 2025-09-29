@@ -1,0 +1,63 @@
+#include <stdio.h> 
+
+ 
+
+int main() { 
+
+	setbuf(stdout, NULL); 
+
+ 
+
+	int var, x, num, suma = 0; 
+
+ 
+
+	printf("¿Cuantos números deseas sumar?: "); 
+
+	scanf("%d", &var); 
+
+ 
+
+	if (var <= 0) { //Asegura que sean números positivos 
+
+		printf("Por fsvor, ingresa un número entero positivo!"); 
+
+		return 1; // salida de entrada de datos, regresa al inicio del programa 
+
+	} 
+
+ 
+
+	for (x = 1; x <= var; x++) { 
+
+		do { 
+
+		printf("Ingresa el número que deseas sumar %d: ", x); 
+
+		scanf("%d", &num); 
+
+ 
+
+		if (num <= 0) { //Asegura que sean positivos 
+
+			printf("El número debe ser positivo.\n"); 
+
+		} 
+
+	} while (num <= 0); //repite hasta que ingresen número válido 
+
+		suma += num ; 
+
+ 
+
+	} 
+
+ 
+
+	printf("La suma total de los %d números es: %d\n", var, suma); 
+
+ 
+
+	return 0 ; 
+
+} 
