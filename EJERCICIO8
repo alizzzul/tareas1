@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+int main() {
+	setbuf(stdout, NULL);
+	//Declaración de variables
+	int producto, cantidad ;
+	float ventaTotal = 0.0, subtotal ;
+
+	printf("--- Ventas de la semana. ---\n") ;
+	printf("Producto\t\t Precio\n");
+	printf("---------------------\n");
+	printf("1\t\t $2.98\n2\t\t $4.50\n3\t\t $9.98\n4\t\t $4.49\n5\t\t $6.87\n");
+
+	while (1) {
+		printf("Producto vendido (Presiona 0 para salir):");
+		scanf("%d", &producto);
+		//If para definir botón de salida
+		if (producto == 0) {
+			break;
+		}
+
+		do {
+		printf("Cantidad: ");
+		scanf("%d", &cantidad);
+
+		if (cantidad <= 0) {
+			printf("Error. Cantidad inválida.\n");
+		}
+		} while (cantidad <= 0);
+
+		subtotal = 0 ; //Reiniciamos subtotal a 0  cada vuelta
+
+		switch(producto) {
+
+		case 1:
+			subtotal = 2.98 * cantidad ;
+			break ;
+		case 2:
+			subtotal = 4.50 * cantidad ;
+			break ;
+		case 3:
+			subtotal = 9.98 * cantidad ;
+			break ;
+		case 4:
+			subtotal = 4.49 * cantidad ;
+			break ;
+		case 5:
+			subtotal = 6.87 * cantidad ;
+			break ;
+		default:
+			printf("Error. Producto inválido.\n");
+			continue;
+
+		}
+
+	ventaTotal += subtotal;
+	printf("Subtotal de producto %d: $%.2f\n", producto, subtotal);
+
+		}
+	printf("\n**************************\n");
+	printf("Venta total de la semana: $%.2f\n", ventaTotal);
+	printf("**************************\n");
+
+	return 0;
+}
