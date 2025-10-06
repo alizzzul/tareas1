@@ -1,0 +1,130 @@
+#include <stdio.h>
+
+int main() {
+	setbuf(stdout, NULL);
+
+	//!(x < 5) && !(y >= 7) == !(x < 5 || y >= 7)
+	//!(a == b ) || !(g != 5) == !(a == b && g != 5)
+	//!((x <= 8) && (y > 4)) == !(x <= 8) || !(y > 4)
+	//!((i > 4) || (j <= 6)) == !(i > 4) && !(j <= 6)
+
+	int x, y, a, b, g, i, j ;
+	int expOrig1, expEquivalente1;
+    int expOrig2, expEquivalente2;
+    int expOrig3, expEquivalente3;
+    int expOrig4, expEquivalente4;
+
+	printf("VERIFICANDO LA LEY DE MORGAN ! \(￣︶￣*))\n") ;
+
+	do {
+	printf("En este caso revisaremos !(x < 5) && !(y >= 7)\n");
+	{
+		//El usuario ingresa los valores que desea revisar.
+	printf("Ingresa un valor para x: \n") ;
+	scanf("%d", &x) ;
+
+	printf("Ingresa un valor para y: \n") ;
+	scanf("%d", &y) ;
+
+	expOrig1 = !(x < 5) && !(y >= 7);
+	expEquivalente1 = !(x < 5 || y >= 7);
+
+	printf("\nResultados:\n");
+	printf("Expresión original: \t %d\n", expOrig1);
+	printf("Equivalente: \t %d\n", expEquivalente1);
+
+
+
+	if (expOrig1 == expEquivalente1) {
+		printf("(～￣▽￣)～ Es correcto! Ambas expresiones son equivalentes.\n");
+		break ;
+	} else {
+		printf("`(*>﹏<*)′ Que mal! Estas expresiones no son equivalentes, revisa los valores");
+	}}
+	} while (1) ;
+
+	do {
+	printf("Ahora revisaremos !(a == b) || !(g != 5)\n") ;
+	printf("Ingresa un valor para a: \n") ;
+	scanf("%d", &a) ;
+
+	printf("Ingresa un valor para b: \n") ;
+	scanf("%d", &b) ;
+
+	printf("Ingresa un valor para g: \n") ;
+	scanf("%d", &g) ;
+
+	expOrig2 = !(a == b) || !(g != 5);
+	expEquivalente2 = !(a == b && g != 5);
+
+	printf("\nResultados:\n") ;
+	printf("Expresión original: \t %d\n", expOrig2) ;
+	printf("Expresión equivalente: \t %d\n", expEquivalente2) ;
+
+	if (expOrig2 == expEquivalente2) {
+		printf("(～￣▽￣)～ Es correcto! Ambas expresiones son equivalentes.");
+		break  ;
+	} else {
+			printf("`(*>﹏<*)′ Que mal! Estas expresiones no son equivalentes, revisa los valores. \n ");
+		}
+	} while (1) ;
+	do {
+		printf("En este caso revisaremos !((x <= 8) && (y > 4))\n");
+		{
+
+		printf("Ingresa un valor para x: \n") ;
+		scanf("%d", &x) ;
+
+		printf("Ingresa un valor para y: \n") ;
+		scanf("%d", &y) ;
+
+		expOrig3 = !(x <= 8) && (y > 4);
+		expEquivalente3 = !(x <= 8) || !(y > 4);
+
+		printf("\nResultados:\n");
+		printf("Expresión original: \t %d\n", expOrig3);
+		printf("Equivalente: \t %d\n", expEquivalente3);
+
+
+
+		if (expOrig3 == expEquivalente3) {
+			printf("(～￣▽￣)～ Es correcto! Ambas expresiones son equivalentes.\n");
+			break ;
+		} else {
+			printf("`(*>﹏<*)′ Que mal! Estas expresiones no son equivalentes, revisa los valores");
+		}}
+		} while (1) ;
+
+
+
+	do {
+		printf("En este caso revisaremos !((i > 4) || (j <= 6))\n");
+		{
+
+		printf("Ingresa un valor para i: \n") ;
+		scanf("%d", &i) ;
+
+		printf("Ingresa un valor para j: \n") ;
+		scanf("%d", &j) ;
+
+		expOrig4 = !((i > 4) || (j <= 6));
+		expEquivalente4 =  !(i > 4) && !(j <= 6);
+
+		printf("\nResultados:\n");
+		printf("Expresión original: \t %d\n", expOrig4);
+		printf("Equivalente: \t %d\n", expEquivalente4);
+
+
+
+		if (expOrig4 == expEquivalente4) {
+			printf("(～￣▽￣)～ Es correcto! Ambas expresiones son equivalentes.\n");
+			break ;
+		} else {
+			printf("`(*>﹏<*)′ Que mal! Estas expresiones no son equivalentes, revisa los valores");
+		}}
+		} while (1) ;
+
+
+
+	return 0 ;
+	}
