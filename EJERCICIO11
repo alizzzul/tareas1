@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+
+//Prototipo de función, no devuelve ningún valor,
+	void numARomano(int numero, char *romano) {
+//Definición de  la función, se forman arreglos en orden con la equivalencia de los simbolos
+	int valor[] =  {100, 90, 50, 40, 10, 9, 5, 4, 1};
+	char *simbolo[] = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"} ;
+
+	int indice = 0;
+
+	for (int i = 0; i < 9; i++)  { //Recorre los arreglos en orden
+		while (numero >= valor[i]) {
+			numero -= valor[i];
+//Mientras el numero sea mayor o igual a el valor, se  resta y se agrega su simbolo
+			for (int j = 0; simbolo[i][j] != '\0'; j++) {
+				romano[indice++] = simbolo[i][j] ;
+//Copia las letras de simbolos usando el indice para ir avanzando
+			}
+		}
+	}
+		romano[indice] = '\0'; //Indica el final de la cadena
+	}
+
+	int main() {
+		setbuf(stdout, NULL) ;
+
+	printf("------ Numeros romanos ------\n");
+
+	for (int i = 1; i <= 100; i++) { //Pasa por números del 1 al 100
+		char romano[20]; //Arreglo donde se va a guardar la salida
+		numARomano(i, romano); //Llamado de función
+		printf("-- %7d -- %13s --\n", i, romano); //Imprime el número y el símbolo
+
+	}
+
+	return 0;
+	}
