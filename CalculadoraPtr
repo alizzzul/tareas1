@@ -1,0 +1,86 @@
+MAIN :
+#include <stdio.h>
+#include "operaciones.h"
+
+
+
+int main() {
+	setbuf(stdout, NULL) ;
+
+	int opcion ; //Opción que el usuario eliga
+	double num, num1; //Los números a realizar
+
+	void (*operaciones[])(double, double) = {sumar, restar, multiplicar, dividir}; //Declaración de puntero a funciones
+
+	do {
+		printf("\n--- Menú de operaciones ---\n"); //Menú
+		printf("1. Sumar\n");
+		printf("2. Restar\n");
+		printf("3. Multiplicar\n");
+		printf("4. Dividir\n");
+		printf("5. Salir\n");
+		printf("Selecciona una opción: ");
+		scanf("%d", &opcion);
+
+		if (opcion >= 1 && opcion <= 4) { //Si la opción elegida es valida, continua pidiendo los dos números
+			printf("Ingresa el primer número: ");
+			scanf("%lf", &num);
+			printf("Inggrese el segundo número: ");
+			scanf("%lf", &num1);
+
+			(*operaciones[opcion - 1])(num, num1); //Se llama a la opción correspondiente
+		}
+		else if (opcion != 5) { //Error de entrada
+			printf("Intenta de nuevo.\n");
+		}
+	} while (opcion != 5); { //Opción de salida
+
+		printf("\nSaliendo del programa...\n");
+
+
+		return 0;
+	}
+}
+
+operaciones.h:
+
+#ifndef OPERACIONES_H 
+#define OPERACIONES_H
+
+//prototipos de funcion
+
+void sumar(double a, double b);
+void restar(double a, double b);
+void multiplicar(double a, double b);
+void dividir(double a, double b);
+
+#endif
+
+DEFINICION DE FUNCIONES.
+
+#include <stdio.h>
+#include "operaciones.h"
+
+void sumar(double a, double b) {
+	printf("\n--- SUMA ---\n");
+	printf("%.2lf + %.2lf = %.2lf\n", a, b, a + b);
+}
+
+void restar(double a, double b) {
+	printf("\n--- RESTA ---\n");
+	printf("%.2lf + %.2lf = %.2lf\n", a, b, a - b);
+}
+
+void multiplicar(double a, double b) {
+	printf("\n--- MULTIPLICACIÓN ---\n") ;
+	printf("%.2lf + %.2lf = %.2lf\n", a, b, a * b) ;
+}
+
+void dividir(double a, double b) {
+	printf("\n--- DIVISIÓN ---\n") ;
+	if (b != 0)
+		printf("%.2lf / %.2lf = %.2lf\n", a, b, a / b);
+	else
+		printf("--- ERROR ---");
+}
+
